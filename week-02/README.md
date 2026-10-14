@@ -1,8 +1,8 @@
-\# Week 2 - Natural Language Property Search
+﻿# Week 2 - Natural Language Property Search
 
 
 
-\## Goal
+## Goal
 
 
 
@@ -30,23 +30,23 @@ Example structured output:
 
 {
 
-&#x20; "city": "Irvine",
+   "city": "Irvine",
 
-&#x20; "maxPrice": 1500000,
+   "maxPrice": 1500000,
 
-&#x20; "beds": 3,
+   "beds": 3,
 
-&#x20; "baths": null,
+   "baths": null,
 
-&#x20; "sqft": null,
+   "sqft": null,
 
-&#x20; "type": "Condominium",
+   "type": "Condominium",
 
-&#x20; "pool": "True",
+   "pool": "True",
 
-&#x20; "hasView": null,
+   "hasView": null,
 
-&#x20; "maxHoa": null
+   "maxHoa": null
 
 }
 
@@ -54,7 +54,7 @@ Example structured output:
 
 
 
-\## Supported Filters
+## Supported Filters
 
 
 
@@ -82,7 +82,7 @@ Example structured output:
 
 
 
-\## Implementation
+## Implementation
 
 
 
@@ -106,17 +106,17 @@ Examples of normalization:
 
 
 
-\- `$900k` -> `900000`
+- `$900k` -> `900000`
 
-\- `$1.5M` -> `1500000`
+- `$1.5M` -> `1500000`
 
-\- `condo` -> `Condominium`
+- `condo` -> `Condominium`
 
-\- `townhome` -> `Townhouse`
+- `townhome` -> `Townhouse`
 
-\- `single family` -> `SingleFamilyResidence`
+- `single family` -> `SingleFamilyResidence`
 
-\- `land` -> `UnimprovedLand`
+- `land` -> `UnimprovedLand`
 
 
 
@@ -124,7 +124,7 @@ The parser returns `null` for filters that are not present in the user's query.
 
 
 
-\## Testing
+## Testing
 
 
 
@@ -144,23 +144,23 @@ I created 10 natural-language property search queries covering:
 
 
 
-\- city
+- city
 
-\- price
+- price
 
-\- bedrooms
+- bedrooms
 
-\- bathrooms
+- bathrooms
 
-\- square feet
+- square feet
 
-\- property type
+- property type
 
-\- pool
+- pool
 
-\- view
+- view
 
-\- HOA
+- HOA
 
 
 
@@ -176,7 +176,7 @@ Passed 10/10 tests.
 
 
 
-\## OpenClaw Skill
+## OpenClaw Skill
 
 
 
@@ -196,7 +196,7 @@ The skill describes when property search parsing should be used, which filters a
 
 
 
-\## Week 2 Result
+## Week 2 Result
 
 
 
@@ -205,4 +205,5 @@ At the end of Week 2, the system can accept a natural-language property request 
 
 
 Database querying is not implemented in this week. The structured filters produced by this parser will be used by the database layer in Week 3.
+
 
