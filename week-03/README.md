@@ -1,8 +1,8 @@
-\# Week 3 - MLS Database Integration
+# Week 3 - MLS Database Integration
 
 
 
-\## Goal
+## Goal
 
 
 
@@ -14,23 +14,23 @@ This week focuses on:
 
 
 
-\- MySQL connection pooling
+- MySQL connection pooling
 
-\- Parameterized SQL queries
+- Parameterized SQL queries
 
-\- Active listing search
+- Active listing search
 
-\- Sold comparable property queries
+- Sold comparable property queries
 
-\- Pagination
+- Pagination
 
-\- Result formatting
+- Result formatting
 
-\- Integration with the Week 2 parser
+- Integration with the Week 2 parser
 
 
 
-\## Database Connection
+## Database Connection
 
 
 
@@ -52,13 +52,13 @@ It uses `mysql2/promise` and environment variables:
 
 ```text
 
-MYSQL\_HOST
+MYSQL_HOST
 
-MYSQL\_USER
+MYSQL_USER
 
-MYSQL\_PASSWORD
+MYSQL_PASSWORD
 
-MYSQL\_DATABASE
+MYSQL_DATABASE
 
 ```
 
@@ -68,7 +68,7 @@ The connection uses a MySQL connection pool and a reusable `query()` helper.
 
 
 
-\## Active Listing Search
+## Active Listing Search
 
 
 
@@ -78,7 +78,7 @@ Active listings are queried from:
 
 ```text
 
-rets\_property
+rets_property
 
 ```
 
@@ -104,17 +104,17 @@ Supported filters include:
 
 | --- | --- |
 
-| city | `L\_City` |
+| city | `L_City` |
 
-| maxPrice | `L\_SystemPrice` |
+| maxPrice | `L_SystemPrice` |
 
-| beds | `L\_Keyword2` |
+| beds | `L_Keyword2` |
 
-| baths | `LM\_Dec\_3` |
+| baths | `LM_Dec_3` |
 
-| sqft | `LM\_Int2\_3` |
+| sqft | `LM_Int2_3` |
 
-| type | `L\_Type\_` |
+| type | `L_Type_` |
 
 | pool | `PoolPrivateYN` |
 
@@ -134,9 +134,9 @@ Example:
 
 ```sql
 
-AND L\_City = ?
+AND L_City = ?
 
-AND L\_SystemPrice <= ?
+AND L_SystemPrice <= ?
 
 ```
 
@@ -146,7 +146,7 @@ This keeps the database layer parameterized and safer.
 
 
 
-\## Pagination
+## Pagination
 
 
 
@@ -170,13 +170,13 @@ The offset is calculated using:
 
 ```text
 
-(page - 1) \* limit
+(page - 1) * limit
 
 ```
 
 
 
-\## Sold Comparables
+## Sold Comparables
 
 
 
@@ -186,7 +186,7 @@ Sold comparable properties are queried from:
 
 ```text
 
-california\_sold
+california_sold
 
 ```
 
@@ -208,19 +208,19 @@ The query supports:
 
 
 
-\- city
+- city
 
-\- recent month range
+- recent month range
 
-\- residential property filtering
+- residential property filtering
 
-\- newest sold properties first
+- newest sold properties first
 
-\- maximum of 50 results
+- maximum of 50 results
 
 
 
-\## Property Card Formatting
+## Property Card Formatting
 
 
 
@@ -244,7 +244,7 @@ This makes the results easier for downstream OpenClaw agents and communication c
 
 
 
-\## Week 2 Integration
+## Week 2 Integration
 
 
 
@@ -272,33 +272,33 @@ Flow:
 
 Natural-language query
 
-&#x20;       |
+         |
 
-&#x20;       v
+         v
 
 Week 2 parser
 
-&#x20;       |
+         |
 
-&#x20;       v
+         v
 
 Structured PropertyFilters
 
-&#x20;       |
+         |
 
-&#x20;       v
+         v
 
 Week 3 parameterized SQL
 
-&#x20;       |
+         |
 
-&#x20;       v
+         v
 
-rets\_property
+rets_property
 
-&#x20;       |
+         |
 
-&#x20;       v
+         v
 
 Formatted property cards
 
@@ -322,7 +322,7 @@ The integration test successfully returned five matching active listings from th
 
 
 
-\## Tests
+## Tests
 
 
 
@@ -348,17 +348,17 @@ Verified results:
 
 
 
-\- MySQL connection successful
+- MySQL connection successful
 
-\- Active listing query returned real MLS rows
+- Active listing query returned real MLS rows
 
-\- Sold comparable query returned 50 Irvine sold properties
+- Sold comparable query returned 50 Irvine sold properties
 
-\- Natural-language integration returned 5 formatted property cards
+- Natural-language integration returned 5 formatted property cards
 
 
 
-\## Week 3 Result
+## Week 3 Result
 
 
 
