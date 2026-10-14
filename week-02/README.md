@@ -56,28 +56,16 @@ Example structured output:
 
 ## Supported Filters
 
-
-
 | User Intent | Parser Field | Database Column |
-
-|---|---|---|
-
-| City | `city` | `L\_City` |
-
-| Maximum price | `maxPrice` | `L\_SystemPrice` |
-
-| Minimum bedrooms | `beds` | `L\_Keyword2` |
-
-| Minimum bathrooms | `baths` | `LM\_Dec\_3` |
-
-| Minimum square feet | `sqft` | `LM\_Int2\_3` |
-
-| Property type | `type` | `L\_Type\_` |
-
+| --- | --- | --- |
+| City | `city` | `L_City` |
+| Maximum price | `maxPrice` | `L_SystemPrice` |
+| Minimum bedrooms | `beds` | `L_Keyword2` |
+| Minimum bathrooms | `baths` | `LM_Dec_3` |
+| Minimum square feet | `sqft` | `LM_Int2_3` |
+| Property type | `type` | `L_Type_` |
 | Pool | `pool` | `PoolPrivateYN` |
-
 | View | `hasView` | `ViewYN` |
-
 | Maximum HOA | `maxHoa` | `AssociationFee` |
 
 
