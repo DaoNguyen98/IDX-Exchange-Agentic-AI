@@ -98,28 +98,16 @@ src/property-search.ts
 
 Supported filters include:
 
-
-
 | Filter | Database Column |
-
-| --- | --- |
-
+|---|---|
 | city | `L_City` |
-
 | maxPrice | `L_SystemPrice` |
-
 | beds | `L_Keyword2` |
-
 | baths | `LM_Dec_3` |
-
 | sqft | `LM_Int2_3` |
-
 | type | `L_Type_` |
-
 | pool | `PoolPrivateYN` |
-
 | hasView | `ViewYN` |
-
 | maxHoa | `AssociationFee` |
 
 
@@ -266,44 +254,16 @@ It connects the Week 2 parser to the Week 3 database layer.
 
 Flow:
 
-
-
-```text
-
-Natural-language query
-
-         |
-
-         v
-
-Week 2 parser
-
-         |
-
-         v
-
-Structured PropertyFilters
-
-         |
-
-         v
-
-Week 3 parameterized SQL
-
-         |
-
-         v
-
-rets_property
-
-         |
-
-         v
-
-Formatted property cards
-
+```mermaid
+flowchart LR
+    A[Natural Language Query] --> B[Week 2 Parser]
+    B --> C[Structured PropertyFilters]
+    C --> D[Week 3 Property Search]
+    D --> E[Parameterized SQL]
+    E --> F[(rets_property)]
+    F --> G[MLS Listing Results]
+    G --> H[Formatted Property Cards]
 ```
-
 
 
 Example input:
