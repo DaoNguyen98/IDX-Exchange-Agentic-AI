@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "search": "tsx week-03/src/search-cli.ts",
+    "chat": "tsx week-04/src/conversation-cli.ts"
   },
   "repository": {
     "type": "git",

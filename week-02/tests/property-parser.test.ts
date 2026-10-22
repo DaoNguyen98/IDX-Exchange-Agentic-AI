@@ -101,6 +101,42 @@ const testCases: TestCase[] = [
       hasView: "True",
     },
   },
+
+{
+  query: "Find condos in Irvine above $600k.",
+  expected: {
+    city: "Irvine",
+    minPrice: 600000,
+    type: "Condominium",
+  },
+},
+{
+  query: "Find condos in Irvine between $600k and $1.2M.",
+  expected: {
+    city: "Irvine",
+    minPrice: 600000,
+    maxPrice: 1200000,
+    type: "Condominium",
+  },
+},
+{
+  query: "Find 4-bedroom condos in Irvine under $1M.",
+  expected: {
+    city: "Irvine",
+    maxPrice: 1000000,
+    beds: 4,
+    type: "Condominium",
+  },
+},
+{
+  query: "Find single family homes in Irvine over $700k.",
+  expected: {
+    city: "Irvine",
+    minPrice: 700000,
+    type: "SingleFamilyResidence",
+  },
+},
+
 ];
 
 async function runTests() {

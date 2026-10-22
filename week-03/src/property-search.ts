@@ -63,6 +63,11 @@ export async function searchActiveListings(
     sql += " AND L_City = ?";
     params.push(filters.city);
   }
+  
+  if (filters.minPrice) {
+  sql += " AND L_SystemPrice >= ?";
+  params.push(filters.minPrice);
+  }
 
   if (filters.maxPrice) {
     sql += " AND L_SystemPrice <= ?";
@@ -128,12 +133,14 @@ export function formatPropertyCard(listing: ListingRow): string {
       : "N/A";
 
   return [
-    `${listing.L_Address}, ${listing.L_City} ${listing.L_Zip}`,
-    `$${price}`,
-    `${listing.beds ?? "N/A"} bd / ${baths ?? "N/A"} ba`,
-    `${sqft} sqft`,
-    `${listing.type ?? "Unknown type"}`,
-    `${listing.DaysOnMarket ?? "N/A"} days on market`,
+    `Address: ${listing.L_Address}, ${listing.L_City} ${listing.L_Zip}`,
+    `Price: $${price}`,
+    `Bedrooms: ${listing.beds ?? "N/A"}`,
+    `Bathrooms: ${baths ?? "N/A"}`,
+    `Square Feet: ${sqft}`,
+    `Type: ${listing.type ?? "Unknown"}`,
+    `Days on Market: ${listing.DaysOnMarket ?? "N/A"}`,
+    `Photos: ${listing.PhotoCount ?? 0}`,
     `MLS: ${listing.L_DisplayId}`,
-  ].join(" | ");
+  ].join("\n");
 }

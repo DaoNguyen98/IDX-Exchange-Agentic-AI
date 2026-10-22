@@ -4,7 +4,7 @@ import { pool } from "../src/db";
 async function runTest() {
   try {
     const query =
-      "Show me 3-bedroom condos in Irvine under $1.5M";
+      "Find condos in Irvine between $600k and $1.2M";
 
     const results = await runPropertySearchSkill(
       query,
@@ -17,9 +17,11 @@ async function runTest() {
 
     console.log("\nProperty cards:");
 
-    for (const card of results) {
-      console.log(card);
-    }
+   for (let i = 0; i < results.length; i++) {
+    console.log(`\nProperty ${i + 1}`);
+    console.log(results[i]);
+    console.log("----------------------------------------");
+}
 
     console.log(`\nReturned ${results.length} property cards.`);
   } catch (error) {
