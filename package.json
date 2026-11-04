@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "search": "tsx week-03/src/search-cli.ts",
-    "chat": "tsx week-04/src/conversation-cli.ts"
+    "chat": "tsx week-04/src/conversation-cli.ts",
+    "market-chat": "tsx week-05/src/market-chat.ts"
   },
   "repository": {
     "type": "git",
