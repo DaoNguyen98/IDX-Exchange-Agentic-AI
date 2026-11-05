@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "search": "tsx week-03/src/search-cli.ts",
     "chat": "tsx week-04/src/conversation-cli.ts",
-    "market-chat": "tsx week-05/src/market-chat.ts"
+    "market-chat": "tsx week-05/src/market-chat.ts",
+    "semantic-search": "tsx week-06/src/semantic-cli.ts"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   },
   "homepage": "https://github.com/DaoNguyen98/IDX-Exchange-Agentic-AI#readme",
   "dependencies": {
+    "@google/genai": "^2.32.0",
     "mysql2": "^3.24.6"
   },
   "devDependencies": {
