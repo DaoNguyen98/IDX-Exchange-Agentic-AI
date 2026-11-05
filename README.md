@@ -15,12 +15,12 @@ Multi-week real estate AI project built with OpenClaw, Gemini, TypeScript, MySQL
 
 | Week | Topic | Status |
 |---|---|---|
-| Week 1 | OpenClaw Architecture | Complete |
-| Week 2 | Natural-Language Property Search | Complete |
-| Week 3 | MLS MySQL Search | Complete |
-| Week 4 | Multi-Turn Property Search | Complete |
-| Week 5 | Market Analytics | Complete |
-| Week 6 | Semantic Property Search | Complete |
+| [Week 1](week-01/) | OpenClaw Architecture | Complete |
+| [Week 2](week-02/) | Natural-Language Property Search | Complete |
+| [Week 3](week-03/) | MLS MySQL Search | Complete |
+| [Week 4](week-04/) | Multi-Turn Property Search | Complete |
+| [Week 5](week-05/) | Market Analytics | Complete |
+| [Week 6](week-06/) | Semantic Property Search | Complete |
 
 ## Repository
 
