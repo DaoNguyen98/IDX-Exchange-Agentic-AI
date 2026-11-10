@@ -1,8 +1,8 @@
-\# Week 7 — Recommendation Engine
+# Week 7 — Recommendation Engine
 
 
 
-\## Goal
+## Goal
 
 
 
@@ -10,19 +10,19 @@ Build a hybrid recommendation engine that combines structured property similarit
 
 
 
-Given a listing the user likes, the system returns the top 5 similar active listings and validates each recommendation using recent sold-property data from `california\_sold`.
+Given a listing the user likes, the system returns the top 5 similar active listings and validates each recommendation using recent sold-property data from `california_sold`.
 
 
 
-\## Data Sources
+## Data Sources
 
 
 
-\### Active Listings
+### Active Listings
 
 
 
-Source: `rets\_property`
+Source: `rets_property`
 
 
 
@@ -30,25 +30,25 @@ Important fields:
 
 
 
-\- `L\_ListingID`
+- `L_ListingID`
 
-\- `L\_City`
+- `L_City`
 
-\- `L\_SystemPrice`
+- `L_SystemPrice`
 
-\- `L\_Keyword2`
+- `L_Keyword2`
 
-\- `LM\_Int2\_3`
+- `LM_Int2_3`
 
-\- `L\_Remarks`
-
-
-
-\### Sold Comparables
+- `L_Remarks`
 
 
 
-Source: `california\_sold`
+### Sold Comparables
+
+
+
+Source: `california_sold`
 
 
 
@@ -56,19 +56,19 @@ Used for price validation with:
 
 
 
-\- City
+- City
 
-\- Property type
+- Property type
 
-\- Living area
+- Living area
 
-\- Close price
+- Close price
 
-\- Close date
+- Close date
 
 
 
-\## Hybrid Recommendation Score
+## Hybrid Recommendation Score
 
 
 
@@ -76,9 +76,9 @@ The recommendation score combines:
 
 
 
-\- 60% structured similarity
+- 60% structured similarity
 
-\- 40% semantic similarity
+- 40% semantic similarity
 
 
 
@@ -86,13 +86,13 @@ Structured similarity considers:
 
 
 
-\- Price difference
+- Price difference
 
-\- Bedroom count
+- Bedroom count
 
-\- City
+- City
 
-\- Square footage
+- Square footage
 
 
 
@@ -100,7 +100,7 @@ Semantic similarity uses cosine similarity between listing embeddings created in
 
 
 
-\## Comp Validation
+## Comp Validation
 
 
 
@@ -112,21 +112,21 @@ The system:
 
 
 
-1\. Finds residential sales in the same city.
+1. Finds residential sales in the same city.
 
-2\. Uses properties between 80% and 120% of the listing's square footage.
+2. Uses properties between 80% and 120% of the listing's square footage.
 
-3\. Uses sales from the last 6 months.
+3. Uses sales from the last 6 months.
 
-4\. Calculates average price per square foot.
+4. Calculates average price per square foot.
 
-5\. Estimates a comp-supported property price.
+5. Estimates a comp-supported property price.
 
-6\. Compares the listing price with the estimated comp price.
+6. Compares the listing price with the estimated comp price.
 
 
 
-\## Example
+## Example
 
 
 
@@ -134,15 +134,15 @@ Target listing:
 
 
 
-\- Mountain House
+- Mountain House
 
-\- $1,122,426
+- $1,122,426
 
-\- 5 bedrooms
+- 5 bedrooms
 
-\- 4 bathrooms
+- 4 bathrooms
 
-\- 2,992 sq ft
+- 2,992 sq ft
 
 
 
@@ -150,21 +150,21 @@ Top recommendation:
 
 
 
-\- Mountain House
+- Mountain House
 
-\- Hybrid score: 95.07
+- Hybrid score: 95.07
 
-\- List price: $1,128,292
+- List price: $1,128,292
 
-\- Estimated comp price: $1,060,018
+- Estimated comp price: $1,060,018
 
-\- 12 recent comps
+- 12 recent comps
 
-\- Listed approximately 6.4% above recent comps
+- Listed approximately 6.4% above recent comps
 
 
 
-\## Run Recommendation Demo
+## Run Recommendation Demo
 
 
 
@@ -176,7 +176,7 @@ npx tsx week-07/src/recommendation-cli.ts 1118381441
 
 
 
-\## Run Tests
+## Run Tests
 
 
 
@@ -204,7 +204,7 @@ npx tsx week-07/tests/recommendation.test.ts
 
 
 
-\## Files
+## Files
 
 
 
@@ -226,15 +226,15 @@ week-07/
 
 └── tests/
 
-&#x20;   ├── hybrid-score.test.ts
+   ├── hybrid-score.test.ts
 
-&#x20;   └── recommendation.test.ts
+   └── recommendation.test.ts
 
 ```
 
 
 
-\## What I Learned
+## What I Learned
 
 
 
@@ -243,4 +243,5 @@ This week I learned how to combine structured property features with semantic em
 
 
 I also learned how recent sold-property data can be used to validate recommendation prices instead of relying only on similarity scores.
+
 
