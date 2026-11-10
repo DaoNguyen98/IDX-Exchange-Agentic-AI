@@ -204,34 +204,6 @@ npx tsx week-07/tests/recommendation.test.ts
 
 
 
-## Files
-
-
-
-```text
-
-week-07/
-
-├── README.md
-
-├── src/
-
-│   ├── hybrid-score.ts
-
-│   ├── comp-validation.ts
-
-│   ├── recommendation.ts
-
-│   └── recommendation-cli.ts
-
-└── tests/
-
-   ├── hybrid-score.test.ts
-
-   └── recommendation.test.ts
-
-```
-
 
 
 ## What I Learned
